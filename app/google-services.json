@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "551406497543",
+    "project_id": "femalesefty",
+    "storage_bucket": "femalesefty.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551406497543:android:90bd8f94f6a9c7d1119fa2",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkNgKge46SftYJAi0zvdfDnFWwvye1Flc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

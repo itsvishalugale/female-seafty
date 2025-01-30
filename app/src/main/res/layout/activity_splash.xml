@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#DEF0F3"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center"
-    tools:context=".SplashActivity">
+    android:orientation="vertical"
+    tools:context=".SplashActivity"
+    android:background="@drawable/splash_background">
 
-
+    <!-- Logo Image -->
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="215dp"
-        android:layout_height="214dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="200dp"
-        android:src="@drawable/humansafety" />
+        android:id="@+id/splash_logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/safeshe"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="20dp"/>
 
+
+    <!-- App Name -->
     <TextView
+        android:id="@+id/splash_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="SafeShe"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
 
-        android:padding="5dp"
-        android:layout_marginLeft="3dp"
+    <!-- Tagline -->
+    <TextView
+        android:id="@+id/splash_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Safety, Our Priority"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Progress Indicator -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Welcome to Female Sefty App"
-        android:textColor="#743B8D"
-        android:textSize="25dp" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:textSize="14dp"
-        android:textColor="@color/black"
-        android:text="Develop By:- Vishal ugale"/>
-
-
+        android:indeterminate="true"/>
 </LinearLayout>

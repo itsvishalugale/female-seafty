@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.Manifest;
@@ -48,6 +49,8 @@ public class DrawerNavigation extends AppCompatActivity {
     private static final String CONTACTS_KEY = "SavedContacts";
     private static final int REQUEST_LOCATION_PERMISSION = 1;
 
+    private MediaPlayer mediaPlayer;
+
     private FusedLocationProviderClient fusedLocationClient;
 
     @SuppressLint("MissingPermission")
@@ -65,6 +68,63 @@ public class DrawerNavigation extends AppCompatActivity {
         sendMessageButton = findViewById(R.id.btn_send_msg);
         sendLocationButton = findViewById(R.id.btn_sendLocation);
         tvSavedContactsTitle = findViewById(R.id.tv_saved_contacts_title);
+
+        bt_police=findViewById(R.id.btn_emr_police);
+        bt_callnumber=findViewById(R.id.call_number);
+        bt_parent=findViewById(R.id.btn_emr_parent);
+
+        bt_parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:8459409264"));
+                startActivity(callIntent);
+
+            }
+        });
+
+        bt_police.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:8459409264"));
+                startActivity(callIntent);
+
+            }
+        });
+
+        bt_callnumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String n=et_number.getText().toString().trim();
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+n));
+                startActivity(callIntent);
+
+            }
+        });
+
+
+        Button sirenButton = findViewById(R.id.btn_siren);
+        mediaPlayer = MediaPlayer.create(this, R.raw.alert_sound);
+
+        sirenButton.setOnClickListener(v -> {
+            if (mediaPlayer != null) {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.pause();
+                    mediaPlayer.seekTo(0);
+                } else {
+                    mediaPlayer.start();
+                }
+            }
+        });
+
+
+
+
 
         // Initialize shared preferences and Gson
         sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);

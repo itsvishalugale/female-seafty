@@ -1,174 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:background="#FFFAFA"
-    android:layout_height="match_parent">
-
-
-<Toolbar
-android:layout_width="match_parent"
-android:layout_height="?attr/actionBarSize"
-android:background="#6200EE"
-    android:elevation="4dp">
-
-<ImageButton
-android:layout_width="50dp"
-android:layout_height="40dp"
-android:id="@+id/img"
-android:src="@drawable/round_attachment_24"
-android:background="@android:color/transparent"
-android:padding="5dp"/>
-    </Toolbar>
-
-    <!-- ScrollView to handle content overflow -->
-<ScrollView
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
     android:padding="16dp">
 
-    <!-- Contact Input Section -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter Contact to Call:"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="20dp"/>
-
-    <EditText
+    <!-- Toolbar Section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColorHint="#757575"
-        android:id="@+id/contactName"
-        android:inputType="text"
-        android:gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:maxLength="10"
-        android:hint="Enter Name"
-        android:background="@drawable/edittext_background"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="#6200EE"
+        android:elevation="4dp">
 
-    <EditText
+        <ImageButton
+            android:id="@+id/img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/round_attachment_24"
+            android:background="@android:color/transparent"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- ScrollView to handle overflow when many contacts are saved -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textColorHint="#757575"
-        android:id="@+id/et_number"
-        android:inputType="number"
-        android:gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:maxLength="10"
-        android:hint="Enter Number"
-        android:background="@drawable/edittext_background"/>
+        android:layout_height="wrap_content">
 
-    <!-- Call and Save Buttons -->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call"
-        android:id="@+id/call_number"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:backgroundTint="#6200EE"
-    android:textColor="#FFFFFF"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/savecontact"
-        android:text="Save Contact"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:backgroundTint="#6200EE"
-        android:textColor="#FFFFFF"/>
-
-
-    <TextView
-        android:id="@+id/tv_saved_contacts_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Emergency Contacts"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:visibility="visible"
-        android:layout_gravity="center"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Call Police"
-            android:id="@+id/btn_emr_police"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="#FF0000"
-        android:textColor="#FFFFFF"/>
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Call Parent"
-            android:id="@+id/btn_emr_parent"
-            android:backgroundTint="#FF0000"
-            android:textColor="#FFFFFF"/>
-    </LinearLayout>
+            <!-- Contact Input Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter Contact Information"
+                android:textSize="18sp"
+                android:textColor="#6200EE"
+                android:gravity="center"
+                android:layout_marginTop="20dp"/>
 
+            <!-- Name and Number Input -->
+            <EditText
+                android:id="@+id/contactName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Enter Name"
+                android:inputType="text"
+                android:maxLength="30"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:textColorHint="#757575"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send Message"
-        android:id="@+id/btn_send_msg"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:backgroundTint="#6200EE"
-        android:textColor="#FFFFFF"/>
+            <EditText
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Enter Phone Number"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:padding="12dp"
+                android:background="@drawable/edittext_background"
+                android:textColorHint="#757575"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Send Location"
-        android:id="@+id/btn_sendLocation"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:backgroundTint="#6200EE"
-        android:textColor="#FFFFFF"/>
+            <!-- Save and Call Buttons -->
+            <Button
+                android:id="@+id/savecontact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Contact"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#6200EE"/>
 
+            <Button
+                android:id="@+id/call_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FF5722"/>
 
-    <TextView
-        android:id="@+id/tv_saved_contacts_title2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Saved Contacts"
-        android:textSize="18sp"
-        android:textColor="#000000"
-        android:visibility="visible"
-        android:layout_gravity="center"/>
+            <!-- Emergency Contact Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
 
-    <LinearLayout
-        android:id="@+id/ll_saved_contacts"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"/>
+                <Button
+                    android:id="@+id/btn_emr_police"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call Police"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="#D32F2F"/>
+
+                <Button
+                    android:id="@+id/btn_emr_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Call Parent"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#D32F2F"/>
+            </LinearLayout>
+
+            <!-- Send Message and Send Location Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_send_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send Message"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6200EE"/>
+
+                <Button
+                    android:id="@+id/btn_sendLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Send Location"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="10dp"
+                    android:backgroundTint="#6200EE"/>
+            </LinearLayout>
+
+            <!-- Displaying Saved Contacts Section -->
+            <TextView
+                android:id="@+id/tv_saved_contacts_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saved Contacts"
+                android:textSize="18sp"
+                android:textColor="#6200EE"
+                android:gravity="center"
+                android:layout_marginTop="30dp"/>
+
+            <LinearLayout
+                android:id="@+id/ll_saved_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
-</ScrollView>
-    </LinearLayout>

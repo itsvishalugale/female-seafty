@@ -2,114 +2,64 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ContentProviderOperation;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-
 public class SavedContactlayout extends Activity {
 
-    ListView listView;
-    ArrayList<String> numbersList;
-    Button save;
-    EditText et_number,contactName;
+    LinearLayout llSavedContacts;
 
-    ArrayAdapter<String> adapter;
-
+    TextView contactname,contactnumber;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.saved_contact_layout);
-//        listView=findViewById(R.id.listSavedContact);
-        save=findViewById(R.id.savecontact);
-        et_number=findViewById(R.id.et_number);
-        contactName=findViewById(R.id.contactName);
+        setContentView(R.layout.saved_contact_layout); // Use saved_contact_layout.xml
 
+        llSavedContacts = findViewById(R.id.ll_saved_contacts);
+        contactname=findViewById(R.id.tv_contact_name);
+        contactnumber=findViewById(R.id.tv_contact_number);
 
-//save.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String name = contactName.getText().toString().trim();
-//                String phone = et_number.getText().toString().trim();
-//
-//                if (!name.isEmpty() && !phone.isEmpty()) {
-//                    saveContact(name, phone);
-//                } else {
-//                    Toast.makeText(SavedContactlayout.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//    }
-//
-//    private void saveContact(String name, String phone) {
-//        // Create a list to hold the contact data
-//        ArrayList<ContentProviderOperation> operations = new ArrayList<>();
-//
-//        // Add name
-//        operations.add(ContentProviderOperation.newInsert(ContactsContract.RawContacts.CONTENT_URI)
-//                .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
-//                .withValue(ContactsContract.RawContacts.ACCOUNT_NAME, null)
-//                .build());
-//
-//        // Add display name
-//        operations.add(ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI)
-//                .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
-//                .withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
-//                .withValue(ContactsContract.CommonDataKinds.StructuredName.DISPLAY_NAME, name)
-//                .build());
-//
-//        // Add phone number
-//        operations.add(ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI)
-//                .withValueBackReference(ContactsContract.Data.RAW_CONTACT_ID, 0)
-//                .withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)
-//                .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, phone)
-//                .withValue(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE)
-//                .build());
-//
-//        try {
-//            // Apply the operations
-//            getContentResolver().applyBatch(ContactsContract.AUTHORITY, operations);
-//            Toast.makeText(this, "Contact saved successfully!", Toast.LENGTH_SHORT).show();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            Toast.makeText(this, "Failed to save contact", Toast.LENGTH_SHORT).show();
-//        }
+        // Display saved contacts
+        displaySavedContacts();
+    }
 
-//        save.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
+    private void displaySavedContacts() {
+        // Retrieve saved contacts from SharedPreferences or a database
+//        Intent intent = getIntent();
+//        String receivedMessage = intent.getStringExtra("name");
+//        String receivedMobileNumber = intent.getStringExtra("number");
 //
-//                numbersList = new ArrayList<>();
-//
-//
-//                adapter = new ArrayAdapter<>(SavedContactlayout.this, android.R.layout.simple_list_item_1, numbersList);
-//                listView.setAdapter(adapter);
-//
-//                String number = et_number.getText().toString().trim();
-//
-//
-//                if (!number.isEmpty()) {
-//
-//                    numbersList.add(number);
-//                    adapter.notifyDataSetChanged();
-//
-//                    et_number.setText("");
-//                }
-//
-//            }
-//        });
+//        contactname.setText(receivedMessage);;
+//        contactnumber.setText(receivedMobileNumber);
+        // For now, we assume the contacts are already added to llSavedContacts in DrawerNavigation.java
 
+//        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+//        String mobileNumber = sharedPreferences.getString("mobile_number", "No Number Found");
+//        String contactName=sharedPreferences.getString("contact_name","No name found");
+//        contactname.setText(contactName);;
+//        contactnumber.setText(mobileNumber);
 
+//
+//        View contactView = LayoutInflater.from(this).inflate(R.layout.saved_contact_layout, llSavedContacts, false);
+//
+//        TextView tvContactName = contactView.findViewById(R.id.tv_contact_name);
+//        TextView tvContactNumber = contactView.findViewById(R.id.tv_contact_number);
+//        Button btnCall = contactView.findViewById(R.id.btn_call);
+//
+//        tvContactName.setText(contactName);
+//        tvContactNumber.setText(mobileNumber);
+//
+//
 
 
     }

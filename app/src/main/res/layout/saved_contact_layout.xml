@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_height="match_parent">
-
-
-<!--    <ListView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-
-<!--        android:id="@+id/listSavedContact"/>-->
+    android:padding="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
 
     <TextView
         android:id="@+id/tv_contact_name"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textColor="#000000"
-        tools:ignore="Suspicious0dp" />
+        android:text="Contact Name"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tv_contact_number"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:textSize="16sp"
-        android:textColor="#000000"
-        tools:ignore="Suspicious0dp" />
+        android:textColor="#757575"
+        android:text="Contact Number"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btn_call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Call" />
-
+        android:text="Call"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="end"/>
 </LinearLayout>

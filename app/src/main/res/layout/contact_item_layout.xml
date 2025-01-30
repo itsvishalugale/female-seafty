@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="John Doe"
+        android:textSize="16sp"
+        android:textColor="#333333" />
+
+    <TextView
+        android:id="@+id/tv_contact_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9876543210"
+        android:textSize="16sp"
+        android:textColor="#333333" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:id="@+id/btn_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF5722"/>
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#6200EE"
+            android:layout_marginLeft="8dp"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D32F2F"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+    <!-- New Buttons for Send Message and Send Location -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <Button
+            android:id="@+id/btn_send_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Message"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btn_send_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send Location"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#2196F3"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -6,9 +6,11 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.Manifest;
+import android.os.Environment;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,11 +32,20 @@ import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DrawerNavigation extends AppCompatActivity {
+
+    private ImageButton btnRecord;
+    private MediaRecorder mediaRecorder;
+    private boolean isRecording = false;
+    private String outputFile;
+
+
+
 
     DrawerLayout drawerLayout;
     ImageButton img_btn;
@@ -72,6 +83,17 @@ public class DrawerNavigation extends AppCompatActivity {
         bt_police=findViewById(R.id.btn_emr_police);
         bt_callnumber=findViewById(R.id.call_number);
         bt_parent=findViewById(R.id.btn_emr_parent);
+
+
+
+
+
+
+
+
+
+
+
 
         bt_parent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -327,5 +349,17 @@ public class DrawerNavigation extends AppCompatActivity {
                     });
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

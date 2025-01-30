@@ -51,6 +51,15 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.9")
 
 
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    // Gson dependency for JSON serialization/deserialization
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    // Material Design components (optional, for better UI)
+    
+
+
 
     // Play Services Location
     implementation(libs.play.services.location)

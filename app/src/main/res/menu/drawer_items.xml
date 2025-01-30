@@ -10,10 +10,10 @@
         android:id="@+id/navTheam"
         android:title="Theam"/>
 
-
     <item
-        android:id="@+id/navContact"
-        android:title="Contact Us"/>
+        android:id="@+id/nav_recordings"
+        android:title="Saved Recordings"
+        android:icon="@drawable/ic_mic" />
     <item
         android:id="@+id/navTerms"
         android:title="Terms and Conditions"/>

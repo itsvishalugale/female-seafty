@@ -2,13 +2,9 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -26,8 +22,8 @@ public class SavedContactlayout extends Activity {
         setContentView(R.layout.saved_contact_layout); // Use saved_contact_layout.xml
 
         llSavedContacts = findViewById(R.id.ll_saved_contacts);
-        contactname=findViewById(R.id.tv_contact_name);
-        contactnumber=findViewById(R.id.tv_contact_number);
+//        contactname=findViewById(R.id.tv_contact_name);
+//        contactnumber=findViewById(R.id.tv_contact_number);
 
         // Display saved contacts
         displaySavedContacts();
@@ -61,6 +57,13 @@ public class SavedContactlayout extends Activity {
 //
 //
 
+
+    }
+
+
+    public void openEmergencyContacts(View view) {
+        Intent i=new Intent(getApplicationContext(), EmergencyContactActivity.class);
+        startActivity(i);
 
     }
 }

@@ -1,0 +1,11 @@
+<resources>
+    <style name="CircularButton">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/circular_button</item>
+        <item name="android:elevation">6dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+</resources>

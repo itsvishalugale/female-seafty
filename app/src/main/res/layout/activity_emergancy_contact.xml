@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_pink"
+    android:padding="16dp">
+
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Contacts"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search contacts..."
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@id/tvHeader"
+        android:singleLine="true"
+        android:inputType="text"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Contact List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RvContacts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/etSearch"
+        android:layout_above="@id/btnSendLocation"
+        android:layout_marginTop="10dp"
+        />
+
+    <!-- Emergency Call Button -->
+    <Button
+        android:id="@+id/btnEmergencyCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EMERGENCY CALL"
+        android:backgroundTint="@color/red"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dp"/>
+
+    <!-- Send Location Button -->
+    <Button
+        android:id="@+id/btnSendLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND LIVE LOCATION"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:layout_above="@id/btnEmergencyCall"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- Floating Add Contact Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnOpenDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_input_add"
+        android:backgroundTint="@color/purple_700"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"/>
+
+</RelativeLayout>

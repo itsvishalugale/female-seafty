@@ -3,6 +3,8 @@ package com.example.myapplication;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -46,23 +49,35 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
         holder.txtNumber.setText(model.number);
         holder.txtName.setText(model.name);
 
-        holder.llRow.setOnClickListener(view -> openEditDialog(position));
+        // Call Button Click
+        holder.btnCall.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + model.number));
+            context.startActivity(intent);
+        });
 
-        holder.llRow.setOnLongClickListener(view -> {
+        // Edit Button Click
+        holder.btnEdit.setOnClickListener(view -> openEditDialog(position));
+
+        // Delete Button Click
+        holder.btnDelete.setOnClickListener(view -> {
             new AlertDialog.Builder(context)
                     .setTitle("Delete Contact")
-                    .setMessage("Are you sure you want to delete?")
+                    .setMessage("Are you sure you want to delete this contact?")
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         arrContact.remove(position);
                         notifyItemRemoved(position);
-                        ((EmergencyContactActivity) context).saveContactsToPreferences();
+                        notifyItemRangeChanged(position, arrContact.size());
+                        if (context instanceof EmergencyContactActivity) {
+                            ((EmergencyContactActivity) context).saveContactsToPreferences();
+                        }
                     })
                     .setNegativeButton("No", null)
                     .show();
-            return true;
         });
     }
 
+    // Open Edit Dialog
     private void openEditDialog(int position) {
         Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.fragment_add_contact_dialog);
@@ -85,7 +100,9 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
             if (!name.isEmpty() && !number.isEmpty()) {
                 arrContact.set(position, new ContactModel(arrContact.get(position).img, name, number));
                 notifyItemChanged(position);
-                ((EmergencyContactActivity) context).saveContactsToPreferences();
+                if (context instanceof EmergencyContactActivity) {
+                    ((EmergencyContactActivity) context).saveContactsToPreferences();
+                }
                 dialog.dismiss();
             } else {
                 Toast.makeText(context, "Please enter a contact name and number", Toast.LENGTH_SHORT).show();
@@ -103,14 +120,16 @@ public class RecyclerContactAdapter extends RecyclerView.Adapter<RecyclerContact
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtName, txtNumber;
         ImageView imgContact;
-        LinearLayout llRow;
+        ImageButton btnEdit, btnCall, btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtName = itemView.findViewById(R.id.txtName);
             txtNumber = itemView.findViewById(R.id.txtNumber);
             imgContact = itemView.findViewById(R.id.imgContact);
-            llRow = itemView.findViewById(R.id.llRow);
+            btnEdit = itemView.findViewById(R.id.btnEdit);
+            btnCall = itemView.findViewById(R.id.btnCall);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
         }
     }
 

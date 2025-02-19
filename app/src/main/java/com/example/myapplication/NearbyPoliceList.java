@@ -21,11 +21,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class NearbyHospitalList extends AppCompatActivity {
+public class NearbyPoliceList extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private HospitalAdapter adapter;
-    private ArrayList<HospitalModel> hospitalList = new ArrayList<>();
+    private PoliceStationAdapter adapter;
+    private ArrayList<PoliceStationModel> policeStationList = new ArrayList<>();
     private FusedLocationProviderClient fusedLocationClient;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
     private static final String BASE_URL = "https://overpass-api.de/api/";
@@ -33,11 +33,11 @@ public class NearbyHospitalList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nearby_hospital_list_layout);
+        setContentView(R.layout.nearby_police_list);
 
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerViewPolice);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new HospitalAdapter(hospitalList, this);
+        adapter = new PoliceStationAdapter(policeStationList, this);
         recyclerView.setAdapter(adapter);
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -52,15 +52,15 @@ public class NearbyHospitalList extends AppCompatActivity {
 
         fusedLocationClient.getLastLocation().addOnSuccessListener(location -> {
             if (location != null) {
-                fetchHospitals(location.getLatitude(), location.getLongitude());
+                fetchPoliceStations(location.getLatitude(), location.getLongitude());
             } else {
                 Toast.makeText(this, "Failed to get location", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void fetchHospitals(double userLat, double userLon) {
-        String query = "[out:json];node[amenity=hospital](around:5000," + userLat + "," + userLon + ");out;";
+    private void fetchPoliceStations(double userLat, double userLon) {
+        String query = "[out:json];node[amenity=police](around:5000," + userLat + "," + userLon + ");out;";
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -68,21 +68,21 @@ public class NearbyHospitalList extends AppCompatActivity {
                 .build();
 
         OverpassApiService apiService = retrofit.create(OverpassApiService.class);
-        apiService.getNearbyHospitals(query).enqueue(new Callback<OverpassResponse>() {
+        apiService.getNearbyPoliceStations(query).enqueue(new Callback<OverpassResponse>() {
             @Override
             public void onResponse(Call<OverpassResponse> call, Response<OverpassResponse> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     List<OverpassResponse.Element> elements = response.body().getElements();
-                    hospitalList.clear();
+                    policeStationList.clear();
 
                     for (OverpassResponse.Element element : elements) {
-                        double hospitalLat = element.getLat();
-                        double hospitalLon = element.getLon();
-                        double distance = calculateDistance(userLat, userLon, hospitalLat, hospitalLon);
+                        double stationLat = element.getLat();
+                        double stationLon = element.getLon();
+                        double distance = calculateDistance(userLat, userLon, stationLat, stationLon);
 
                         if (distance <= 5.0) {
                             Log.d("API_RESPONSE", "Tags: " + element.getTags().toString());
-                            String name = element.getTags().getOrDefault("name", "Unknown Hospital");
+                            String name = (element.getTags().get("name") != null) ? element.getTags().get("name") : "Unknown Police Station";
                             String address = element.getTags().getOrDefault("addr:full",
                                     element.getTags().getOrDefault("addr:street", "No address available"));
 
@@ -91,8 +91,7 @@ public class NearbyHospitalList extends AppCompatActivity {
 
                             String phone = element.getTags().getOrDefault("contact:phone",
                                     element.getTags().getOrDefault("phone","N/A"));
-
-                            hospitalList.add(new HospitalModel(name, address, pincode, phone, hospitalLat, hospitalLon));
+                            policeStationList.add(new PoliceStationModel(name, address, pincode, phone,stationLat,stationLon));
                         }
                     }
 
@@ -102,7 +101,7 @@ public class NearbyHospitalList extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<OverpassResponse> call, Throwable t) {
-                Toast.makeText(NearbyHospitalList.this, "API request failed!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NearbyPoliceList.this, "API request failed!", Toast.LENGTH_SHORT).show();
                 Log.e("API_ERROR", t.getMessage());
             }
         });

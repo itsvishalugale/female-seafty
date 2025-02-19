@@ -73,4 +73,10 @@ public class SavedContactlayout extends Activity {
         startActivity(i);
 
     }
+    public void openPoliceStation(View view) {
+        Intent i=new Intent(getApplicationContext(), NearbyPoliceList.class);
+        startActivity(i);
+
+    }
+
 }

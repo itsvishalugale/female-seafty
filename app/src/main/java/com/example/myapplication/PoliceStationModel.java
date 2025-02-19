@@ -1,26 +1,26 @@
 package com.example.myapplication;
 
-public class HospitalModel {
+public class PoliceStationModel {
     private String name;
     private String address;
     private String pincode;
     private String phone;
-    private double lat;
-    private double lon;
+    private double latitude;
+    private double longitude;
 
-    public HospitalModel(String name, String address, String pincode, String phone, double lat, double lon) {
+    public PoliceStationModel(String name, String address, String pincode, String phone, double latitude, double longitude) {
         this.name = name;
         this.address = address;
         this.pincode = pincode;
         this.phone = phone;
-        this.lat = lat;
-        this.lon = lon;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName() { return name; }
     public String getAddress() { return address; }
     public String getPincode() { return pincode; }
     public String getPhone() { return phone; }
-    public double getLat() { return lat; }
-    public double getLon() {return lon;}
+    public double getLatitude() { return latitude; }
+    public double getLongitude() { return longitude;}
 }

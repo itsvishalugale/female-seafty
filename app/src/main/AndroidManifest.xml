@@ -34,7 +34,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD4p4lDTYEV8sZc0MACF7E-US485zrhf5k" />
+            android:value="AIzaSyDlcjztuscyO7xLk1UwEIbeuZR_LY-G0Ec" />
 
         <activity
             android:name=".SplashActivity"
@@ -51,6 +51,8 @@
             android:name=".DrawerNavigation"
             android:exported="false" />
         <activity android:name=".EmergencyContactActivity"
+            android:exported="false"/>
+        <activity android:name=".NearbyHospitalList"
             android:exported="false"/>
 
 

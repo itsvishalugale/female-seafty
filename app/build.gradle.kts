@@ -26,6 +26,10 @@ android {
             )
         }
     }
+    buildFeatures{
+        viewBinding =true
+
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,21 +44,28 @@ dependencies {
     implementation(libs.constraintlayout)
 
     // Firebase BoM (Bill of Materials)
-    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+
 
     // Firebase dependencies
     implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth")
+
     implementation("com.google.firebase:firebase-firestore")
-    implementation("com.google.firebase:firebase-database")
+
     implementation("com.google.firebase:firebase-storage")
-    implementation("com.google.code.gson:gson:2.8.9")
 
 
+
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-auth")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.google.code.gson:gson:2.10.1")
+
+
+
 
     // Gson dependency for JSON serialization/deserialization
-    implementation("com.google.code.gson:gson:2.10.1")
+
 
     // Material Design components (optional, for better UI)
     
@@ -63,6 +74,7 @@ dependencies {
 
     // Play Services Location
     implementation(libs.play.services.location)
+    implementation(libs.places)
 
     // Testing dependencies
     testImplementation(libs.junit)

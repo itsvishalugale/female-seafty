@@ -61,6 +61,13 @@ public class SavedContactlayout extends Activity {
     }
 
 
+    public void openMedicalStock(View view) {
+        Intent intent = new Intent(this, NearbyHospitalList.class);
+        startActivity(intent);
+}
+
+
+
     public void openEmergencyContacts(View view) {
         Intent i=new Intent(getApplicationContext(), EmergencyContactActivity.class);
         startActivity(i);

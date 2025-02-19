@@ -1,12 +1,21 @@
 package com.example.myapplication;
 
 public class ContactModel {
-    int img;
-    String name, number;
+    private String id;
+    private String name;
+    private String number;
 
-    public ContactModel(int img, String name, String number) {
-        this.img = img;
+    public ContactModel() {
+        // Empty constructor required for Firebase
+    }
+
+    public ContactModel(String id, String name, String number) {
+        this.id = id;
         this.name = name;
         this.number = number;
     }
+
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getNumber() { return number;}
 }

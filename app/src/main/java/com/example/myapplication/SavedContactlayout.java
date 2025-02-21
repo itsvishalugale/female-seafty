@@ -3,8 +3,10 @@ package com.example.myapplication;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,6 +17,7 @@ public class SavedContactlayout extends Activity {
     LinearLayout llSavedContacts;
 
     TextView contactname,contactnumber;
+    MediaPlayer mediaPlayer;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +30,22 @@ public class SavedContactlayout extends Activity {
 
         // Display saved contacts
         displaySavedContacts();
+
+
+
+        Button sirenButton = findViewById(R.id.btn_siren);
+        mediaPlayer = MediaPlayer.create(this, R.raw.alert_sound);
+
+        sirenButton.setOnClickListener(v -> {
+            if (mediaPlayer != null) {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.pause();
+                    mediaPlayer.seekTo(0);
+                } else {
+                    mediaPlayer.start();
+                }
+            }
+        });
     }
 
     private void displaySavedContacts() {
@@ -69,7 +88,7 @@ public class SavedContactlayout extends Activity {
 
 
     public void openEmergencyContacts(View view) {
-        Intent i=new Intent(getApplicationContext(), EmergencyContactActivity.class);
+        Intent i=new Intent(getApplicationContext(), EmergencyContact.class);
         startActivity(i);
 
     }
@@ -93,6 +112,8 @@ public class SavedContactlayout extends Activity {
         Intent intent = new Intent(getApplicationContext(), WeatherForecastActivity.class);
         startActivity(intent);
     }
+
+
 
 
 }

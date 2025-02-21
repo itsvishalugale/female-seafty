@@ -1,13 +1,10 @@
 package com.example.myapplication;
 
 import android.app.Dialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -33,7 +30,7 @@ public class EmergencyContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emergancy_contact);
+        setContentView(R.layout.activity_emergancy_contactmain);
 
         etSearch = findViewById(R.id.etSearch);
         recyclerView = findViewById(R.id.RvContacts);

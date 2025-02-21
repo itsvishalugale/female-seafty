@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splash_background">
+    android:background="@drawable/splash_gradient">
 
-    <!-- Center Content (Logo + Texts) -->
+    <!-- Center Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,26 +13,28 @@
         android:gravity="center"
         android:layout_centerInParent="true">
 
-        <!-- Logo Image -->
-        <ImageView
+        <!-- Circular Logo -->
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/splash_logo"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/safeshe"
-            android:scaleType="fitCenter"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:src="@drawable/female2"
+            android:scaleType="centerCrop"
             android:adjustViewBounds="true"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            app:shapeAppearanceOverlay="@style/CircleImageView"/>
 
         <!-- App Name -->
         <TextView
             android:id="@+id/splash_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SafeShe"
-            android:textSize="28sp"
+            android:text="HerSafety"
+            android:textSize="32sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
-            android:gravity="center" />
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"/>
 
         <!-- Tagline -->
         <TextView
@@ -39,10 +42,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your Safety, Our Priority"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:fontFamily="sans-serif"/>
+
+        <!-- Motivational Quote -->
+        <TextView
+            android:id="@+id/splash_quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="“Empower. Protect. Thrive.”"
             android:textSize="16sp"
             android:textColor="@android:color/white"
             android:layout_marginTop="10dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:textStyle="italic"/>
 
         <!-- Progress Indicator -->
         <ProgressBar
@@ -51,10 +68,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:indeterminate="true" />
-
     </LinearLayout>
 
-    <!-- Developed By Text (Fixed at Bottom) -->
+    <!-- Developed By -->
     <TextView
         android:id="@+id/developed_by"
         android:layout_width="match_parent"
@@ -66,5 +82,4 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:alpha="0.7" />
-
 </RelativeLayout>

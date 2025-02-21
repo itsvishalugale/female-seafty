@@ -4,9 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+
     tools:context=".SavedContactlayout"
     android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#C3D4E5E8"
+
+            android:elevation="4dp">
+
+            <!-- Attachment Button -->
+            <ImageButton
+                android:id="@+id/img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/round_attachment_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                />
+            <ImageButton
+                android:id="@+id/btn_record"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="end"
+                android:background="@drawable/circular_background"
+                android:src="@drawable/ic_mic"
+                android:contentDescription="record button"/>
+
+            <!-- Siren Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_siren"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:text="🚨"
+                android:textSize="22sp"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#D50000"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:elevation="6dp"/>
+        </androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +83,7 @@
                 android:layout_height="200dp"
                 android:layout_margin="8dp"
                 android:layout_columnWeight="1"
-                app:cardBackgroundColor="@color/red"
+                app:cardBackgroundColor="#FB8E8E"
                 app:cardCornerRadius="12dp"
                 android:elevation="4dp"
                 android:onClick="openEmergencyContacts">
@@ -303,6 +350,7 @@
             </androidx.cardview.widget.CardView>
         </GridLayout>
 
+    </LinearLayout>
     </LinearLayout>
 
 </ScrollView>

@@ -42,18 +42,20 @@
         />
 
     <!-- Emergency Call Button -->
-    <Button
+
+    <!-- Send Location Button -->
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEmergencyCall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EMERGENCY CALL"
-        android:backgroundTint="@color/red"
-        android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="70dp"/>
+        android:layout_marginBottom="-4dp"
+        android:backgroundTint="@color/red"
+        android:text="EMERGENCY CALL"
+        android:textColor="@android:color/white" />
 
-    <!-- Send Location Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSendLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

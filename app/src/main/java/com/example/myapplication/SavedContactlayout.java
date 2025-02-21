@@ -79,4 +79,20 @@ public class SavedContactlayout extends Activity {
 
     }
 
+    public void openSelfDefence(View view){
+        Intent intent = new Intent(getApplicationContext(), SelfDefenceActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void openChatBot(View view) {
+        Intent intent = new Intent(getApplicationContext(), MetaAiActivity.class);
+        startActivity(intent);
+    }
+    public void openWhether(View view) {
+        Intent intent = new Intent(getApplicationContext(), WeatherForecastActivity.class);
+        startActivity(intent);
+    }
+
+
 }

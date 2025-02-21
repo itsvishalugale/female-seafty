@@ -7,12 +7,11 @@
     android:padding="16dp"
     tools:context=".SavedContactlayout"
     android:background="@color/white">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <TextView
@@ -34,7 +33,7 @@
             <!-- Emergency Contacts -->
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_margin="8dp"
                 android:layout_columnWeight="1"
                 app:cardBackgroundColor="@color/red"
@@ -53,8 +52,7 @@
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:src="@drawable/ic_phone"
-                        app:tint="@color/red"
-                        tools:ignore="UseAppTint" />
+                         />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -63,16 +61,23 @@
                         android:textSize="18sp"
                         android:textColor="@color/black"
                         android:layout_marginTop="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quickly access emergancy contact for immediate help"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Medical Stock -->
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_margin="8dp"
                 android:layout_columnWeight="1"
-                app:cardBackgroundColor="@color/pink"
+                app:cardBackgroundColor="#faecc0"
                 app:cardCornerRadius="12dp"
                 android:elevation="4dp"
                 android:onClick="openMedicalStock">
@@ -87,9 +92,9 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/ic_pill"
-                        android:tint="@color/blue"
-                        tools:ignore="UseAppTint" />
+                        android:src="@drawable/ic_hospital"
+                        android:scaleType="fitCenter"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -97,17 +102,25 @@
                         android:text="Nearby Hospital"
                         android:textSize="18sp"
                         android:textColor="@color/black"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="5dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Emergency? Help is Nearby!"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="5dp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Checkup Schedule -->
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:layout_margin="8dp"
                 android:layout_columnWeight="1"
-                app:cardBackgroundColor="@color/purple"
+                app:cardBackgroundColor="#BCD9C8"
                 app:cardCornerRadius="12dp"
                 android:elevation="4dp"
                 android:onClick="openPoliceStation">
@@ -122,8 +135,9 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/police"
+                        android:src="@drawable/ic_police_station"
                         android:scaleType="fitCenter"
+
                          />
 
                     <TextView
@@ -131,6 +145,14 @@
                         android:layout_height="wrap_content"
                         android:text="Nearby Police Station"
                         android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="get instace access of nearest police station for your seafty."
+                        android:textSize="13sp"
                         android:textColor="@color/black"
                         android:layout_marginTop="8dp" />
                 </LinearLayout>
@@ -149,6 +171,137 @@
             android:textColor="@color/gray"
             android:textStyle="bold"
             android:layout_marginTop="20dp" />
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:padding="12dp">
+
+            <!-- Emergency Contacts -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="#FDB7EA"
+                app:cardCornerRadius="12dp"
+                android:elevation="4dp"
+                android:onClick="openSelfDefence">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_protection"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Self Defence"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learn self-defense techniques to stay safe in dangerous situations."
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="#faecc0"
+                app:cardCornerRadius="12dp"
+                android:elevation="4dp"
+                android:onClick="openChatBot">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_ai_chat"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ai Chat Bot"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Get instant assistance with our AI-powered chatbot."
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="8dp"
+                android:layout_columnWeight="1"
+                app:cardBackgroundColor="#d0edbe"
+                app:cardCornerRadius="12dp"
+                android:elevation="4dp"
+                android:onClick="openWhether">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_weather"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Whether Forcast"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Know before you Go!\nBe Prepared, Rain or Shine !"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
 
     </LinearLayout>
 

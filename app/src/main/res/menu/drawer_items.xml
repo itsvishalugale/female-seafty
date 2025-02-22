@@ -7,8 +7,8 @@
         android:id="@+id/navContactSaved"
         android:title="Saved Contact"/>
     <item
-        android:id="@+id/navTheam"
-        android:title="Theam"/>
+        android:id="@+id/navLogout"
+        android:title="Logout"/>
 
     <item
         android:id="@+id/nav_recordings"

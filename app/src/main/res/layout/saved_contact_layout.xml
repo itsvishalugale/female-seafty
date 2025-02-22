@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".SavedContactlayout"
     android:background="@color/white">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center">
+
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -20,24 +22,36 @@
 
             android:elevation="4dp">
 
+
+
             <!-- Attachment Button -->
             <ImageButton
-                android:id="@+id/img"
+                android:id="@+id/more"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/round_attachment_24"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                />
+                android:src="@drawable/more" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Welcome To HerSeafty"
+                android:gravity="center"
+                android:id="@+id/et_username"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
             <ImageButton
                 android:id="@+id/btn_record"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="16dp"
                 android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/circular_background"
-                android:src="@drawable/ic_mic"
-                android:contentDescription="record button"/>
+                android:contentDescription="record button"
+                android:src="@drawable/ic_mic" />
 
             <!-- Siren Button -->
             <com.google.android.material.button.MaterialButton
@@ -46,15 +60,15 @@
                 android:layout_height="56dp"
                 android:layout_gravity="end"
                 android:layout_marginEnd="16dp"
-                android:text="🚨"
-                android:textSize="22sp"
-                android:textColor="#FFFFFF"
-                android:backgroundTint="#D50000"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:elevation="6dp"/>
+                android:backgroundTint="#D50000"
+                android:elevation="6dp"
+                android:text="🚨"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
         </androidx.appcompat.widget.Toolbar>
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -70,147 +84,145 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp" />
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="2"
-            android:padding="12dp">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="12dp"
+                android:rowCount="2">
 
-            <!-- Emergency Contacts -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_margin="8dp"
-                android:layout_columnWeight="1"
-                app:cardBackgroundColor="#FB8E8E"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp"
-                android:onClick="openEmergencyContacts">
+                <!-- Emergency Contacts -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:elevation="4dp"
+                    android:onClick="openEmergencyContacts"
+                    app:cardBackgroundColor="#FB8E8E"
+                    app:cardCornerRadius="12dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/ic_phone"
-                         />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Emergency Contacts"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="8dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_phone" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Emergency Contacts"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Quickly access emergancy contact for immediate help"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Medical Stock -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:elevation="4dp"
+                    android:onClick="openMedicalStock"
+                    app:cardBackgroundColor="#faecc0"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quickly access emergancy contact for immediate help"
-                        android:textSize="13sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="8dp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-            <!-- Medical Stock -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_margin="8dp"
-                android:layout_columnWeight="1"
-                app:cardBackgroundColor="#faecc0"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp"
-                android:onClick="openMedicalStock">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_hospital" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Nearby Hospital"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
 
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/ic_hospital"
-                        android:scaleType="fitCenter"
-                        />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Emergency? Help is Nearby!"
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Checkup Schedule -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:elevation="4dp"
+                    android:onClick="openPoliceStation"
+                    app:cardBackgroundColor="#BCD9C8"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Nearby Hospital"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Emergency? Help is Nearby!"
-                        android:textSize="13sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="5dp" />
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_police_station"
 
-            <!-- Checkup Schedule -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_margin="8dp"
-                android:layout_columnWeight="1"
-                app:cardBackgroundColor="#BCD9C8"
-                app:cardCornerRadius="12dp"
-                android:elevation="4dp"
-                android:onClick="openPoliceStation">
+                            />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Nearby Police Station"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
 
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/ic_police_station"
-                        android:scaleType="fitCenter"
-
-                         />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nearby Police Station"
-                        android:textSize="18sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="8dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="get instace access of nearest police station for your seafty."
-                        android:textSize="13sp"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="8dp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="get instace access of nearest police station for your seafty."
+                            android:textColor="@color/black"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
+            </GridLayout>
 
-
-        </GridLayout>
-
-        <TextView
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Additional Features"

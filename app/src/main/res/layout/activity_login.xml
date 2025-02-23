@@ -14,13 +14,17 @@
         android:orientation="vertical"
         android:gravity="center"
         >
-        <!-- App Logo or Image (Optional) -->
-<!--        <ImageView-->
-<!--            android:id="@+id/appLogo"-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:contentDescription="App Logo"-->
-<!--            android:layout_marginBottom="20dp" />-->
+<!--         App Logo or Image (Optional) -->
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="141dp"
+            android:layout_marginTop="20dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="App Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/female" />
 
         <TextView
             android:layout_width="match_parent"
@@ -68,6 +72,7 @@
                 android:hint="Password"
                 android:inputType="textPersonName"
                 android:maxLength="50"
+                android:drawableLeft="@drawable/slock"
 
                 android:drawableTint="@color/gray"
                 android:drawablePadding="10dp"/>

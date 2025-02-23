@@ -70,7 +70,8 @@
         </activity>
         <activity
             android:name=".SavedContactlayout"
-            android:exported="false" />
+            android:exported="false"
+            />
 
         <activity
             android:name=".EmergencyContactActivity"

@@ -4,16 +4,14 @@
         android:id="@+id/navMenu"
         android:title="Menu"/>
     <item
-        android:id="@+id/navContactSaved"
-        android:title="Saved Contact"/>
+
+        android:id="@+id/navSieren"
+        android:title="🚨 Play Sieren"/>
     <item
         android:id="@+id/navLogout"
         android:title="Logout"/>
 
-    <item
-        android:id="@+id/nav_recordings"
-        android:title="Saved Recordings"
-        android:icon="@drawable/ic_mic" />
+
     <item
         android:id="@+id/navTerms"
         android:title="Terms and Conditions"/>

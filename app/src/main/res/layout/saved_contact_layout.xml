@@ -14,17 +14,15 @@
         android:gravity="center">
 
 
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
             android:background="#C3D4E5E8"
-
+            app:title=""
             android:elevation="4dp">
 
-
-
-            <!-- Attachment Button -->
             <ImageButton
                 android:id="@+id/more"
                 android:layout_width="40dp"
@@ -32,40 +30,42 @@
                 android:layout_margin="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/more" />
+<!--             Attachment Button -->
+
 
 
             <TextView
+                android:id="@+id/et_title"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Welcome To HerSeafty"
                 android:gravity="center"
-                android:id="@+id/et_username"
+                android:text="Welcome To HerSeafty"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
-            <ImageButton
-                android:id="@+id/btn_record"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/circular_background"
-                android:contentDescription="record button"
-                android:src="@drawable/ic_mic" />
+<!--&lt;!&ndash;            <ImageButton&ndash;&gt;-->
+<!--                android:id="@+id/btn_record"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:background="@drawable/circular_background"-->
+<!--                android:contentDescription="record button"-->
+<!--                android:src="@drawable/ic_mic" />-->
 
             <!-- Siren Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_siren"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:backgroundTint="#D50000"
-                android:elevation="6dp"
-                android:text="🚨"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp" />
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btn_siren"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:layout_marginEnd="16dp"-->
+<!--                android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--                android:backgroundTint="#D50000"-->
+<!--                android:elevation="6dp"-->
+<!--                android:text="🚨"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="22sp" />-->
         </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
